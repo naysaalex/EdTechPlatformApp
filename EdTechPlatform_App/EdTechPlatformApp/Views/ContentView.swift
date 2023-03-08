@@ -1,13 +1,16 @@
 import SwiftUI
 
 struct ContentView: View{
-  var module: Module //used to access the module
+  @EnvironmentObject var model:ContentModel
+//  var module: Module //used to access the module
 var body: some View{
 ScrollView{
 LazyVStack{
   //ForEach{}
   //will not let you jump between lessons 
-  
+  if model.currentModule != nil{
+    
+  }//end of if
 }//end of lazy
 }//end of scroll
 }//end of var body
