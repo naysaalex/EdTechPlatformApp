@@ -12,6 +12,9 @@ struct HomeView: View {
     //json files are very important - creates an array of arrays and all your information sits in this
     //entire facebook is set up on these files
     var body: some View {
+        NavigationView{
+            VStack{
+            Text("What do you want to do today?")
         ScrollView{
             LazyVStack{
                 //will scroll and only show elements on the screen
@@ -27,11 +30,15 @@ struct HomeView: View {
                                     
                                     
             }//end of foreach
-            }
+            }//lazyVStack
             .padding()
-        }
-    }
-}
+        }//scrollview
+            }//vstack
+            .navigationTitle("Get Started")
+            //to indent the whole file, you would do Ctrl+A, structure, reindent
+        }//navview
+    }//var body
+}//struct end
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
