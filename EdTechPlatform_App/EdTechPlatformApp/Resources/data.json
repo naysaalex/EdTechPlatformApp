@@ -5,21 +5,21 @@
 		"content": {
 			"id": 0,
 			"image": "drivingBasics",
-			"time": "1 hour",
+			"time": "1 hr",
 			"description": "Preparation for written driving test.",
 			"lessons":[
 					{
 					  "id": 0,
 					  "title": "DAY 1",
 					  "video": "",
-                      "duration": "20 minutes",
+                      "duration": "20 min",
                       "explanation": "Look to your left and right. Blah.."
 					},
 					{
 					  "id": 1,
 					  "title": "DAY 2",
 					  "video": "",
-                      "duration": "20 minutes",
+                      "duration": "20 min",
                       "explanation": "Check your lights..Start your engine.."
 					}
 
@@ -29,7 +29,7 @@
 		"quiz": {
 			"id": 0,
 			"image": "drivingQuiz",
-			"time": "25 minutes",
+			"time": "25 min",
 			"description": "Test your knowledge.",
 			"questions": [
 					{
