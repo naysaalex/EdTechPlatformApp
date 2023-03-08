@@ -9,13 +9,20 @@ import Foundation
 
 class ContentModel:ObservableObject
 {
+    //list of modules
     @Published var modules = [Module]()//creating an instance so you need the () brackets next to the array of Modules
+    
+    //current module
+    @Published var currentModule:Module? //question mark is for an optional reference to the structure that you created
+    var currentModuleIndex = 0
+    
     init(){
         //init is for initialization code
         getLocalData()
     }
     
     //function getLocalData()
+    //data methods
     func getLocalData()
     {
         //want to get the URL for the json file
@@ -39,4 +46,20 @@ class ContentModel:ObservableObject
         }
         
     }
+    
+    //module navigation method
+    func beginModule(_ moduleId: Int){
+    //find the index for this module
+        for index in 0..<modules.count{ //"0..<" means you are going from 0 to the total count of modules
+            if modules[index].id == moduleId{
+                //found the match
+                currentModuleIndex = index
+                break
+            }//end of if
+        }//end of for
+        
+    //setting the current module
+        currentModule = modules[currentModuleIndex]
+        
+    }//end of func
 }
