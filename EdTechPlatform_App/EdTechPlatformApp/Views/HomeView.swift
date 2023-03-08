@@ -19,15 +19,21 @@ struct HomeView: View {
             LazyVStack{
                 //will scroll and only show elements on the screen
                 //memory manage technique
+                
                 ForEach(model.modules){module in
-                //learning card
-                       HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
-                                    
-                //quiz card
+                                       
+                       VStack{
+                           NavigationLink(destination: ContentView().onAppear(perform: {model.beginModule(module.id)})){
+                           
+                           //learning card
+                           HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
+                       }//end of label code from navigationLink
+                           
+                       //quiz card
                        HomeViewRow(image: module.quiz.image, title: "\(module.category) Test", description: module.quiz
                             .description, count: "\(module.quiz.questions.count) questions", time: module.quiz.time)
                                     
-                                    
+                       }//end of vstack          
                                     
             }//end of foreach
             }//lazyVStack
