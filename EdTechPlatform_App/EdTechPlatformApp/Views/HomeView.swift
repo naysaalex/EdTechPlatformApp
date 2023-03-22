@@ -22,18 +22,18 @@ struct HomeView: View {
                 
                 ForEach(model.modules){module in
                                        
-                       VStack{
-                           NavigationLink(destination: ContentView().onAppear(perform: {model.beginModule(module.id)})){
+//                       VStack{
+//                           NavigationLink(destination: ContentView().onAppear(perform: {model.beginModule(module.id)})){
                            
                            //learning card
                            HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, count: "\(module.content.lessons.count) Lessons", time: module.content.time)
-                       }//end of label code from navigationLink
+                      // }//end of label code from navigationLink
                            
                        //quiz card
                        HomeViewRow(image: module.quiz.image, title: "\(module.category) Test", description: module.quiz
                             .description, count: "\(module.quiz.questions.count) questions", time: module.quiz.time)
                                     
-                       }//end of vstack          
+                      // }//end of vstack
                                     
             }//end of foreach
             }//lazyVStack
